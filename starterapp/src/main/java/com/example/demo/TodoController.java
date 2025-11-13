@@ -30,7 +30,7 @@ public class TodoController {
     
     // RMM: Level 0 - Swamp of Pox
     @RequestMapping("/gettodos")
-    public String getAllTodos(@RequestParam String param) {
+    public String getAllTodos() {
         return todosPOX.toString();
     }
 
@@ -56,7 +56,8 @@ public class TodoController {
     }
 
     @GetMapping("/{title}")
-    public ResponseEntity<TodoItem> getTodo(@RequestParam String title) {
+
+    public ResponseEntity<TodoItem> getTodo(@PathVariable String title) {
         var item = todos.stream()
             .filter(t -> t.getTitle().equals(title))
             .findFirst()
@@ -86,7 +87,7 @@ public class TodoController {
     }
 
     @DeleteMapping("/{title}")
-    public ResponseEntity<Void> deleteTodo(@RequestParam String title) {
+    public ResponseEntity<Void> deleteTodo(@PathVariable String title) {
         todos.removeIf(t -> t.getTitle().equals(title));
         return ResponseEntity.noContent().build();  
     }
