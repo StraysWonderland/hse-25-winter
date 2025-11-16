@@ -50,4 +50,34 @@
 
 ## 30.10.25 REST APIs
 
+- HTTP Basics: Core concepts of HTTP for APIs, including request/response structure.
+- Introduction to REST: Understanding the foundational ideas of REST as defined by Roy Fielding and how RESTful APIs communicate.
+- Nouns and Verbs: Structuring REST APIs around resources (nouns) and actions (verbs).
+- Representation: Data formats in REST (e.g., JSON, XML) and the role of content negotiation.
+- HTTP Return Codes: Standard HTTP status codes, their meanings, and when to use each in API responses.
+- Idempotency: Ensuring repeatable requests yield the same results to prevent unintended side effects.
+- Richardson's Maturity Model: Levels of RESTful maturity, from Level 0 (HTTP as a tunnel) to Level 3 (HATEOAS), to understand API design progression.
+
 ---
+
+## 06.11.25 Containers and Docker
+
+Development in distributed teams withouth containers and the potential problems:
+- Polyglot application landscapes are challenging as all work environments need to match all runtime requirements for all languages
+- Transporting application from environment A to environment B introduces challenges and problems with mismatching runtimes
+
+Containers
+- Isolate Applications from each other
+- Package Applications along with all Runtime requirements for easy execution and transportation between working environments
+- Simplify configuration of working environments -> only container engine needed
+- andling of all application containers through same mechanisms: docker build, docker run
+
+---
+
+## 13.11.25 Docker Deep Dive
+
+Docker
+- Docker ecosystem consists of the Docker Daemon, Docker CLI and Docker Hub
+- Creation of Dockerfiles
+- Building Images - Understanding the layer concept in container images
+- Running Containers
