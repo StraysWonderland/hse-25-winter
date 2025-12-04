@@ -1,0 +1,29 @@
+version: "3.8"
+services:
+  postgresdb:
+    image: postgres:14.19
+    container_name: todopsql
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: mysecretpassword
+      POSTGRES_DB: postgres
+    ports:
+      - "5432:5432"
+    networks:
+      - todonet
+
+  starterapp:
+    image: starterapp:v1
+    build: 
+      context: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgresdb
+    networks:
+      - todonet
+
+networks:
+  todonet:
+    name: todonet
+
