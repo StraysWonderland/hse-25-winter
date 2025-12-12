@@ -16,6 +16,10 @@ services:
     image: starterapp:v1
     build: 
       context: .
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://todopsql:5432/postgres
+      SPRING_DATSOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: mysecretpassword
     ports:
       - "8080:8080"
     depends_on:
@@ -26,4 +30,3 @@ services:
 networks:
   todonet:
     name: todonet
-
